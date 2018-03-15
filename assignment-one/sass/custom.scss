@@ -1,0 +1,80 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+table *
+{
+	position: relative;
+}
+
+table{
+	width: 100%;
+	max-width: 800px;
+	margin:0 auto;
+	border-collapse: collapse;
+	thead{
+		tr{
+			th{
+				text-align: left;
+				height:50px;
+				background-color: powderblue;
+				padding-left: 20px;
+			}
+		}
+	}
+	tbody{
+		tr{
+			td{
+				padding-left: 20px;
+				height:50px;
+				background-color: yellow;
+				border-bottom: 1px solid #000;
+			}
+		}
+	}
+}
+
+@media (max-width: 700px){
+	table{
+		*{
+			display: block;
+		}
+		thead{
+			tr{
+				th{
+					display:none;
+				}
+			}
+		}
+		tbody{
+			tr{
+				td{
+					padding-left: 45%;
+					padding-top: 20px;
+					&:before{
+						position:absolute;
+						left:10px;
+						top:10px;
+						width: 40%;
+					}
+					&:nth-of-type(1){
+						&:before{
+						content:"Name";
+						}
+					}
+					&:nth-of-type(2){
+						&:before{
+						content:"Designation";
+						}
+					}
+					&:nth-of-type(3){
+						&:before{
+						content:"Location";
+					}
+					}
+				}
+			}
+		}
+	}
+}
